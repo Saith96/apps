@@ -94,19 +94,47 @@
   .btn.disabled { color: var(--muted); border-style: dashed; cursor: default; }
   .btn svg { width: 16px; height: 16px; }
 
+  .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .lang { position: relative; display: inline-flex; align-items: center; }
+  .lang svg { position: absolute; left: 10px; width: 16px; height: 16px; color: var(--muted); pointer-events: none; }
+  .lang select {
+    appearance: none; -webkit-appearance: none;
+    font: inherit; font-size: 14px; color: var(--text);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+    padding: 7px 30px 7px 32px; cursor: pointer;
+    background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+    background-position: right 14px center, right 9px center; background-size: 5px 5px; background-repeat: no-repeat;
+  }
+  .lang select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
   footer { border-top: 1px solid var(--line); padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">Saith Developments</div>
-    <h1>Small apps that work for you, not on you.</h1>
-    <p class="lede">The apps we are launching, where to get them, and why each one exists. One live so far, two on the way.</p>
+    <div class="topbar">
+      <div class="eyebrow">Saith Developments</div>
+      <label class="lang">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg>
+        <select id="lang" aria-label="Language">
+          <option value="en">English</option>
+          <option value="it">Italiano</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="pt">Português</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+        </select>
+      </label>
+    </div>
+    <h1 data-i18n="hero">Small apps that work for you, not on you.</h1>
+    <p class="lede" data-i18n="lede">The apps we are launching, where to get them, and why each one exists. One live so far, two on the way.</p>
     <ul class="principles">
-      <li><strong>No accounts</strong>Open the app and use it. Nothing to sign up for.</li>
-      <li><strong>On-device first</strong>AI and data stay on your phone, not on our servers.</li>
-      <li><strong>Free to start</strong>The core is free; Plus unlocks the rest.</li>
+      <li><strong data-i18n="p1t">No accounts</strong><span data-i18n="p1d">Open the app and use it. Nothing to sign up for.</span></li>
+      <li><strong data-i18n="p2t">On-device first</strong><span data-i18n="p2d">AI and data stay on your phone, not on our servers.</span></li>
+      <li><strong data-i18n="p3t">Free to start</strong><span data-i18n="p3d">The core is free; Plus unlocks the rest.</span></li>
     </ul>
   </header>
 
@@ -116,36 +144,36 @@
       <div class="app-head">
         <img src="assets/offchat.png" alt="OffChat icon">
         <div class="app-title">
-          <span class="badge live">Live on the App Store</span>
+          <span class="badge live" data-i18n="badge_live">Live on the App Store</span>
           <h2>OffChat</h2>
-          <p>Chat with people nearby without internet, over Bluetooth and Wi-Fi.</p>
+          <p data-i18n="oc_tag">Chat with people nearby without internet, over Bluetooth and Wi-Fi.</p>
         </div>
       </div>
       <div class="cols">
         <div>
-          <h3>Why we built it</h3>
-          <p>Networks fail exactly when lots of people are together: festivals, concerts, flights, cruises, protests, power cuts. Every messenger assumes a connection and an account. OffChat assumes neither.</p>
-          <p>Phones talk directly to each other, and messages hop through other nearby phones to reach further. There are no OffChat servers, so your messages only ever live on the phones you chat with.</p>
+          <h3 data-i18n="why">Why we built it</h3>
+          <p data-i18n="oc_why1">Networks fail exactly when lots of people are together: festivals, concerts, flights, cruises, protests, power cuts. Every messenger assumes a connection and an account. OffChat assumes neither.</p>
+          <p data-i18n="oc_why2">Phones talk directly to each other, and messages hop through other nearby phones to reach further. There are no OffChat servers, so your messages only ever live on the phones you chat with.</p>
         </div>
         <div>
-          <h3>What's inside</h3>
+          <h3 data-i18n="inside">What's inside</h3>
           <ul>
-            <li>Channels and direct messages, no SIM or sign-up</li>
-            <li>End-to-end encrypted DMs, every message signed</li>
-            <li>Mesh relay and store-and-forward</li>
-            <li>Photos, voice, replies, reactions</li>
-            <li>Android and iPhone can chat with each other</li>
+            <li data-i18n="oc_f1">Channels and direct messages, no SIM or sign-up</li>
+            <li data-i18n="oc_f2">End-to-end encrypted DMs, every message signed</li>
+            <li data-i18n="oc_f3">Mesh relay and store-and-forward</li>
+            <li data-i18n="oc_f4">Photos, voice, replies, reactions</li>
+            <li data-i18n="oc_f5">Android and iPhone can chat with each other</li>
           </ul>
         </div>
       </div>
       <div class="links">
         <a class="btn primary" href="https://apps.apple.com/app/id6828144900">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
-          Download on the App Store
+          <span data-i18n="btn_appstore">Download on the App Store</span>
         </a>
-        <span class="btn disabled">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/offchat-app/">Website</a>
-        <a class="btn" href="https://saith96.github.io/offchat-app/privacy.html">Privacy</a>
+        <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/offchat-app/" data-i18n="website">Website</a>
+        <a class="btn" href="https://saith96.github.io/offchat-app/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
 
@@ -154,33 +182,33 @@
       <div class="app-head">
         <img src="assets/sitspark.png" alt="Sitspark icon">
         <div class="app-title">
-          <span class="badge soon">Coming soon</span>
+          <span class="badge soon" data-i18n="badge_soon">Coming soon</span>
           <h2>Sitspark</h2>
-          <p>Calm, reward-based dog training in short daily sessions.</p>
+          <p data-i18n="sp_tag">Calm, reward-based dog training in short daily sessions.</p>
         </div>
       </div>
       <div class="cols">
         <div>
-          <h3>Why we built it</h3>
-          <p>Most owners don't need a theory course. They need the next five minutes of training, done right, every day. Sitspark turns force-free methods into short guided sessions with a step player that reads each step aloud.</p>
-          <p>The private AI trainer runs on the phone with Gemini Nano, so questions about your dog never leave the device. No account, no server.</p>
+          <h3 data-i18n="why">Why we built it</h3>
+          <p data-i18n="sp_why1">Most owners don't need a theory course. They need the next five minutes of training, done right, every day. Sitspark turns force-free methods into short guided sessions with a step player that reads each step aloud.</p>
+          <p data-i18n="sp_why2">The private AI trainer runs on the phone with Gemini Nano, so questions about your dog never leave the device. No account, no server.</p>
         </div>
         <div>
-          <h3>What's inside</h3>
+          <h3 data-i18n="inside">What's inside</h3>
           <ul>
-            <li>9 classes, 46 lessons, puppies to adult dogs</li>
-            <li>Clicker, session timer, potty log, bark monitor</li>
-            <li>Puppy socialization tracker and breed tips</li>
-            <li>On-device AI trainer and 7-day behaviour plans</li>
-            <li>12 languages; first class free</li>
+            <li data-i18n="sp_f1">9 classes, 46 lessons, puppies to adult dogs</li>
+            <li data-i18n="sp_f2">Clicker, session timer, potty log, bark monitor</li>
+            <li data-i18n="sp_f3">Puppy socialization tracker and breed tips</li>
+            <li data-i18n="sp_f4">On-device AI trainer and 7-day behaviour plans</li>
+            <li data-i18n="sp_f5">12 languages; first class free</li>
           </ul>
         </div>
       </div>
       <div class="links">
-        <span class="btn disabled">App Store: coming soon</span>
-        <span class="btn disabled">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/sitspark-site/">Website</a>
-        <a class="btn" href="https://saith96.github.io/sitspark-site/privacy.html">Privacy</a>
+        <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
+        <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/sitspark-site/" data-i18n="website">Website</a>
+        <a class="btn" href="https://saith96.github.io/sitspark-site/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
 
@@ -189,32 +217,32 @@
       <div class="app-head">
         <img src="assets/tripspeak.png" alt="TripSpeak icon">
         <div class="app-title">
-          <span class="badge soon">Coming soon</span>
+          <span class="badge soon" data-i18n="badge_soon">Coming soon</span>
           <h2>TripSpeak</h2>
-          <p>Speak the language of your trip: ready phrases and a daily plan.</p>
+          <p data-i18n="ts_tag">Speak the language of your trip: ready phrases and a daily plan.</p>
         </div>
       </div>
       <div class="cols">
         <div>
-          <h3>Why we built it</h3>
-          <p>Travellers don't need grammar tables, they need to order a coffee and ask for directions in three weeks' time. TripSpeak teaches the phrases for your trip on a plan that adapts to your travel date.</p>
-          <p>One app covers 12 courses, so your next trip can be a new language without starting over: your streak, daily goal and reminders carry across.</p>
+          <h3 data-i18n="why">Why we built it</h3>
+          <p data-i18n="ts_why1">Travellers don't need grammar tables, they need to order a coffee and ask for directions in three weeks' time. TripSpeak teaches the phrases for your trip on a plan that adapts to your travel date.</p>
+          <p data-i18n="ts_why2">One app covers 12 courses, so your next trip can be a new language without starting over: your streak, daily goal and reminders carry across.</p>
         </div>
         <div>
-          <h3>What's inside</h3>
+          <h3 data-i18n="inside">What's inside</h3>
           <ul>
-            <li>12 languages, from Italian to Japanese and Thai</li>
-            <li>Listen, read, write, speak, with pronunciation feedback</li>
-            <li>Smart review and an offline phrasebook</li>
-            <li>Camera translator for menus and signs</li>
-            <li>Private on-device AI conversation practice</li>
+            <li data-i18n="ts_f1">12 languages, from Italian to Japanese and Thai</li>
+            <li data-i18n="ts_f2">Listen, read, write, speak, with pronunciation feedback</li>
+            <li data-i18n="ts_f3">Smart review and an offline phrasebook</li>
+            <li data-i18n="ts_f4">Camera translator for menus and signs</li>
+            <li data-i18n="ts_f5">Private on-device AI conversation practice</li>
           </ul>
         </div>
       </div>
       <div class="links">
-        <span class="btn disabled">App Store: coming soon</span>
-        <span class="btn disabled">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/tripspeak-site/privacy.html">Privacy</a>
+        <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
+        <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/tripspeak-site/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
   </main>
@@ -223,5 +251,6 @@
     © 2026 Saith Developments · <a href="mailto:saithdevelopments@gmail.com">saithdevelopments@gmail.com</a>
   </footer>
 </div>
+<script src="i18n.js"></script>
 </body>
 </html>
