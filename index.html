@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Saith Developments · Apps</title>
-<meta name="description" content="The apps we build and launch, where to get them, and why each one exists.">
+<meta name="description" content="The apps and games we build and launch, where to get them, and why each one exists.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,6 +62,8 @@
   .principles strong { display: block; color: var(--text); font-size: 15px; }
 
   main { padding-bottom: 64px; }
+  .section-title { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 28px; margin: 40px 0 16px; }
+  main > .section-title:first-child { margin-top: 0; }
   .app {
     background: var(--surface);
     border: 1px solid var(--line);
@@ -131,7 +133,7 @@
       </label>
     </div>
     <h1 data-i18n="hero">Small apps that work for you, not on you.</h1>
-    <p class="lede" data-i18n="lede">The apps we are launching, where to get them, and why each one exists. One live so far, two on the way.</p>
+    <p class="lede" data-i18n="lede">The apps and games we are launching, where to get them, and why each one exists.</p>
     <ul class="principles">
       <li><strong data-i18n="p1t">No accounts</strong><span data-i18n="p1d">Open the app and use it. Nothing to sign up for.</span></li>
       <li><strong data-i18n="p2t">On-device first</strong><span data-i18n="p2d">AI and data stay on your phone, not on our servers.</span></li>
@@ -140,6 +142,8 @@
   </header>
 
   <main>
+    <h2 class="section-title" data-i18n="sec_apps">Apps</h2>
+
     <!-- OffChat -->
     <article class="app" id="offchat">
       <div class="app-head">
@@ -183,7 +187,7 @@
       <div class="app-head">
         <img src="assets/sitspark.png" alt="Sitspark icon">
         <div class="app-title">
-          <span class="badge soon" data-i18n="badge_soon">Coming soon</span>
+          <span class="badge live" data-i18n="badge_live">Live on the App Store</span>
           <h2>Sitspark</h2>
           <p data-i18n="sp_tag">Calm, reward-based dog training in short daily sessions.</p>
         </div>
@@ -192,7 +196,7 @@
         <div>
           <h3 data-i18n="why">Why we built it</h3>
           <p data-i18n="sp_why1">Most owners don't need a theory course. They need the next five minutes of training, done right, every day. Sitspark turns force-free methods into short guided sessions with a step player that reads each step aloud.</p>
-          <p data-i18n="sp_why2">The private AI trainer runs on the phone with Gemini Nano, so questions about your dog never leave the device. No account, no server.</p>
+          <p data-i18n="sp_why2">The private AI trainer runs on the phone, so questions about your dog never leave the device. No account, no server.</p>
         </div>
         <div>
           <h3 data-i18n="inside">What's inside</h3>
@@ -206,7 +210,10 @@
         </div>
       </div>
       <div class="links">
-        <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
+        <a class="btn primary" href="https://apps.apple.com/app/id6829493127">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
+          <span data-i18n="btn_appstore">Download on the App Store</span>
+        </a>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
         <a class="btn" href="https://saith96.github.io/sitspark-site/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/sitspark-site/privacy.html" data-i18n="privacy">Privacy</a>
@@ -244,6 +251,77 @@
         <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
         <a class="btn" href="https://saith96.github.io/tripspeak-site/privacy.html" data-i18n="privacy">Privacy</a>
+      </div>
+    </article>
+
+    <!-- Singwell -->
+    <article class="app" id="singwell">
+      <div class="app-head">
+        <img src="assets/singwell.png" alt="Singwell icon">
+        <div class="app-title">
+          <span class="badge soon" data-i18n="badge_soon">Coming soon</span>
+          <h2>Singwell</h2>
+          <p data-i18n="sw_tag">A private voice coach: know your voice in two minutes, then watch it improve.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div>
+          <h3 data-i18n="why">Why we built it</h3>
+          <p data-i18n="sw_why1">Most people who sing for fun never get feedback on their voice. Lessons are expensive, and karaoke apps score the song, not the singer. Singwell measures your voice in a two-minute check-up, then builds a five-minute daily workout around your range and your weakest score.</p>
+          <p data-i18n="sw_why2">Your voice is personal, so it stays on your phone. Pitch detection runs on the device: nothing is uploaded, with no account and no ads.</p>
+        </div>
+        <div>
+          <h3 data-i18n="inside">What's inside</h3>
+          <ul>
+            <li data-i18n="sw_f1">Two-minute check-up: range, voice type, accuracy, steadiness</li>
+            <li data-i18n="sw_f2">Live pitch line and a tuning needle for free practice</li>
+            <li data-i18n="sw_f3">A 5-minute daily workout placed in your own range</li>
+            <li data-i18n="sw_f4">13 exercises, with every note graded</li>
+            <li data-i18n="sw_f5">Check-up clips so you can hear your progress</li>
+          </ul>
+        </div>
+      </div>
+      <div class="links">
+        <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
+        <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/singwell-site/" data-i18n="website">Website</a>
+        <a class="btn" href="https://saith96.github.io/singwell-site/privacy.html" data-i18n="privacy">Privacy</a>
+      </div>
+    </article>
+
+    <h2 class="section-title" data-i18n="sec_games">Games</h2>
+
+    <!-- Bounce Bastion -->
+    <article class="app" id="bounce-bastion">
+      <div class="app-head">
+        <img src="assets/bounce-bastion.svg" alt="Bounce Bastion icon">
+        <div class="app-title">
+          <span class="badge soon" data-i18n="badge_soon">Coming soon</span>
+          <h2>Bounce Bastion</h2>
+          <p data-i18n="bb_tag">A one-thumb ricochet roguelite: slide your paddle, bounce your orbs, hold the line.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div>
+          <h3 data-i18n="why">Why we built it</h3>
+          <p data-i18n="bb_why1">We wanted a game you can play properly with one thumb on the bus, with the depth of a roguelite: short runs, big bosses, and a reason to go again.</p>
+          <p data-i18n="bb_why2">It's fair to play for free. Ads only appear between runs, rewarded ads are always optional, and a one-time Full Game purchase removes the ads between runs.</p>
+        </div>
+        <div>
+          <h3 data-i18n="inside">What's inside</h3>
+          <ul>
+            <li data-i18n="bb_f1">One-thumb controls: slide the paddle, ricochet your orbs</li>
+            <li data-i18n="bb_f2">Hold the line against five waves of bosses</li>
+            <li data-i18n="bb_f3">Shards and Workshop upgrades between runs</li>
+            <li data-i18n="bb_f4">No account: progress stays on your device</li>
+            <li data-i18n="bb_f5">One-time Full Game unlock removes ads between runs</li>
+          </ul>
+        </div>
+      </div>
+      <div class="links">
+        <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/bounce-bastion/" data-i18n="website">Website</a>
+        <a class="btn" href="https://saith96.github.io/bounce-bastion/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
   </main>
