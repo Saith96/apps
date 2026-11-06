@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saith Developments · Apps</title>
+<meta name="description" content="The apps we build and launch, where to get them, and why each one exists.">
+<link rel="icon" href="assets/offchat.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --text: #1d1b18;
+    --muted: #6b665e;
+    --line: #e7e2d9;
+    --live: #1f7a4d;
+    --live-bg: #e3f3ea;
+    --soon: #8a5a00;
+    --soon-bg: #fbefd6;
+    --accent: #2f5bd3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141311;
+      --surface: #1d1c19;
+      --text: #f1eee8;
+      --muted: #a39d93;
+      --line: #2e2c28;
+      --live: #6fd3a0;
+      --live-bg: #16352a;
+      --soon: #f0c069;
+      --soon-bg: #3a2e14;
+      --accent: #8aa8ff;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141311; --surface: #1d1c19; --text: #f1eee8; --muted: #a39d93; --line: #2e2c28;
+    --live: #6fd3a0; --live-bg: #16352a; --soon: #f0c069; --soon-bg: #3a2e14; --accent: #8aa8ff;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  a { color: var(--accent); }
+
+  header { padding: 72px 0 40px; }
+  .eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(34px, 6vw, 52px); line-height: 1.1; margin: 10px 0 16px; }
+  .lede { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0; }
+
+  .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 32px 0 0; padding: 0; list-style: none; }
+  .principles li { border-top: 2px solid var(--text); padding-top: 10px; font-size: 14px; color: var(--muted); }
+  .principles strong { display: block; color: var(--text); font-size: 15px; }
+
+  main { padding-bottom: 64px; }
+  .app {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .app-head { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  .app-head img { width: 72px; height: 72px; border-radius: 18px; flex: none; }
+  .app-title { flex: 1; min-width: 200px; }
+  .app-title h2 { margin: 0; font-size: 24px; line-height: 1.2; }
+  .app-title p { margin: 4px 0 0; color: var(--muted); }
+  .badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; margin-bottom: 6px; }
+  .badge.live { color: var(--live); background: var(--live-bg); }
+  .badge.soon { color: var(--soon); background: var(--soon-bg); }
+
+  .cols { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; margin-top: 24px; }
+  @media (max-width: 700px) { .cols { grid-template-columns: 1fr; gap: 16px; } .app { padding: 20px; } }
+  h3 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+  .cols p { margin: 0 0 12px; }
+  .cols ul { margin: 0; padding-left: 18px; }
+  .cols li { margin-bottom: 4px; }
+
+  .links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 12px; font-weight: 600; font-size: 14px; text-decoration: none;
+    border: 1px solid var(--line); color: var(--text); background: transparent;
+  }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn.disabled { color: var(--muted); border-style: dashed; cursor: default; }
+  .btn svg { width: 16px; height: 16px; }
+
+  footer { border-top: 1px solid var(--line); padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Saith Developments</div>
+    <h1>Small apps that work for you, not on you.</h1>
+    <p class="lede">The apps we are launching, where to get them, and why each one exists. One live so far, two on the way.</p>
+    <ul class="principles">
+      <li><strong>No accounts</strong>Open the app and use it. Nothing to sign up for.</li>
+      <li><strong>On-device first</strong>AI and data stay on your phone, not on our servers.</li>
+      <li><strong>Free to start</strong>The core is free; Plus unlocks the rest.</li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- OffChat -->
+    <article class="app" id="offchat">
+      <div class="app-head">
+        <img src="assets/offchat.png" alt="OffChat icon">
+        <div class="app-title">
+          <span class="badge live">Live on Google Play</span>
+          <h2>OffChat</h2>
+          <p>Chat with people nearby without internet, over Bluetooth and Wi-Fi.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Why we built it</h3>
+          <p>Networks fail exactly when lots of people are together: festivals, concerts, flights, cruises, protests, power cuts. Every messenger assumes a connection and an account. OffChat assumes neither.</p>
+          <p>Phones talk directly to each other, and messages hop through other nearby phones to reach further. There are no OffChat servers, so your messages only ever live on the phones you chat with.</p>
+        </div>
+        <div>
+          <h3>What's inside</h3>
+          <ul>
+            <li>Channels and direct messages, no SIM or sign-up</li>
+            <li>End-to-end encrypted DMs, every message signed</li>
+            <li>Mesh relay and store-and-forward</li>
+            <li>Photos, voice, replies, reactions</li>
+            <li>Android and iPhone can chat with each other</li>
+          </ul>
+        </div>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.matteosaitta.offchat">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3.5v17l9-8.5-9-8.5Zm10.4 7.2 2.6-2.5L6.6 2.4l7.8 8.3Zm0 2.6-7.8 8.3 10.4-5.8-2.6-2.5Zm3.9-4.3-2.9 2.9 2.9 2.9 2.9-1.6c.8-.5.8-2 0-2.5l-2.9-1.7Z"/></svg>
+          Get it on Google Play
+        </a>
+        <a class="btn" href="https://saith96.github.io/offchat-app/">Website</a>
+        <a class="btn" href="https://saith96.github.io/offchat-app/privacy.html">Privacy</a>
+      </div>
+    </article>
+
+    <!-- Sitspark -->
+    <article class="app" id="sitspark">
+      <div class="app-head">
+        <img src="assets/sitspark.png" alt="Sitspark icon">
+        <div class="app-title">
+          <span class="badge soon">Coming soon</span>
+          <h2>Sitspark</h2>
+          <p>Calm, reward-based dog training in short daily sessions.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Why we built it</h3>
+          <p>Most owners don't need a theory course. They need the next five minutes of training, done right, every day. Sitspark turns force-free methods into short guided sessions with a step player that reads each step aloud.</p>
+          <p>The private AI trainer runs on the phone with Gemini Nano, so questions about your dog never leave the device. No account, no server.</p>
+        </div>
+        <div>
+          <h3>What's inside</h3>
+          <ul>
+            <li>9 classes, 46 lessons, puppies to adult dogs</li>
+            <li>Clicker, session timer, potty log, bark monitor</li>
+            <li>Puppy socialization tracker and breed tips</li>
+            <li>On-device AI trainer and 7-day behaviour plans</li>
+            <li>12 languages; first class free</li>
+          </ul>
+        </div>
+      </div>
+      <div class="links">
+        <span class="btn disabled">Google Play: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/sitspark-site/">Website</a>
+        <a class="btn" href="https://saith96.github.io/sitspark-site/privacy.html">Privacy</a>
+      </div>
+    </article>
+
+    <!-- TripSpeak -->
+    <article class="app" id="tripspeak">
+      <div class="app-head">
+        <img src="assets/tripspeak.png" alt="TripSpeak icon">
+        <div class="app-title">
+          <span class="badge soon">Coming soon</span>
+          <h2>TripSpeak</h2>
+          <p>Speak the language of your trip: ready phrases and a daily plan.</p>
+        </div>
+      </div>
+      <div class="cols">
+        <div>
+          <h3>Why we built it</h3>
+          <p>Travellers don't need grammar tables, they need to order a coffee and ask for directions in three weeks' time. TripSpeak teaches the phrases for your trip on a plan that adapts to your travel date.</p>
+          <p>It started as TravelFrench and grew into one app with 12 courses. Existing TravelFrench users keep their progress and subscription.</p>
+        </div>
+        <div>
+          <h3>What's inside</h3>
+          <ul>
+            <li>12 languages, from Italian to Japanese and Thai</li>
+            <li>Listen, read, write, speak, with pronunciation feedback</li>
+            <li>Smart review and an offline phrasebook</li>
+            <li>Camera translator for menus and signs</li>
+            <li>Private on-device AI conversation practice</li>
+          </ul>
+        </div>
+      </div>
+      <div class="links">
+        <span class="btn disabled">Google Play: coming soon</span>
+        <a class="btn" href="https://saith96.github.io/tripspeak-site/privacy.html">Privacy</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    © 2026 Saith Developments · <a href="mailto:saithdevelopments@gmail.com">saithdevelopments@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
