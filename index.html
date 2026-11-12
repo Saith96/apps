@@ -110,6 +110,19 @@
   }
   .lang select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+
+  .preview { position: relative; display: block; margin-top: 22px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1200 / 500; background: var(--line); }
+  .preview img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+  .preview:hover img { transform: scale(1.035); }
+  .pv-label { position: absolute; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 7px; background: rgba(15,14,12,.78); color: #fff; font-weight: 600; font-size: 14px; padding: 8px 14px; border-radius: 999px; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background .2s; }
+  .pv-label svg { width: 16px; height: 16px; }
+  .preview:hover .pv-label { background: var(--accent); }
+  .preview:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .btn.site { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.site:hover { filter: brightness(1.08); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.site { color: #0d1020; } }
+  :root[data-theme="dark"] .btn.site { color: #0d1020; }
+  @media (max-width: 700px) { .preview { aspect-ratio: 1200 / 630; } }
   footer { border-top: 1px solid var(--line); padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
 </style>
 </head>
@@ -154,6 +167,7 @@
           <p data-i18n="oc_tag">Chat with people nearby without internet, over Bluetooth and Wi-Fi.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/offchat-app/" aria-label="OffChat website"><img src="https://saith96.github.io/offchat-app/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -172,12 +186,12 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/offchat-app/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <a class="btn primary" href="https://apps.apple.com/app/id6828144900">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
           <span data-i18n="btn_appstore">Download on the App Store</span>
         </a>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/offchat-app/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/offchat-app/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
@@ -192,6 +206,7 @@
           <p data-i18n="sp_tag">Calm, reward-based dog training in short daily sessions.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/sitspark-site/" aria-label="Sitspark website"><img src="https://saith96.github.io/sitspark-site/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -210,12 +225,12 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/sitspark-site/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <a class="btn primary" href="https://apps.apple.com/app/id6829493127">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
           <span data-i18n="btn_appstore">Download on the App Store</span>
         </a>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/sitspark-site/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/sitspark-site/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
@@ -230,6 +245,7 @@
           <p data-i18n="ts_tag">Speak the language of your trip: ready phrases and a daily plan.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/tripspeak-site/" aria-label="TripSpeak website"><img src="https://saith96.github.io/tripspeak-site/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -248,6 +264,7 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/tripspeak-site/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <a class="btn primary" href="https://apps.apple.com/app/id6828880209">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
           <span data-i18n="btn_appstore">Download on the App Store</span>
@@ -267,6 +284,7 @@
           <p data-i18n="sw_tag">A private voice coach: know your voice in two minutes, then watch it improve.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/singwell-site/" aria-label="Singwell website"><img src="https://saith96.github.io/singwell-site/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -285,12 +303,12 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/singwell-site/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <a class="btn primary" href="https://apps.apple.com/app/id6831671752">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
           <span data-i18n="btn_appstore">Download on the App Store</span>
         </a>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/singwell-site/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/singwell-site/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
@@ -305,6 +323,7 @@
           <p data-i18n="sf_tag">A private library for your stickers, memes and GIFs. Find any of them in a second.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/stickfolio-site/" aria-label="Stickfolio website"><img src="https://saith96.github.io/stickfolio-site/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -323,9 +342,9 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/stickfolio-site/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/stickfolio-site/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/stickfolio-site/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
@@ -340,6 +359,7 @@
           <p data-i18n="bw_tag">A make-up coach that draws the tutorial on your own face.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/blushwell-site/" aria-label="Blushwell website"><img src="https://saith96.github.io/blushwell-site/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -358,6 +378,7 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/blushwell-site/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
       </div>
@@ -375,6 +396,7 @@
           <p data-i18n="bb_tag">A one-thumb ricochet roguelite: slide your paddle, bounce your orbs, hold the line.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/bounce-bastion/" aria-label="Bounce Bastion website"><img src="https://saith96.github.io/bounce-bastion/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -393,11 +415,11 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/bounce-bastion/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <a class="btn primary" href="https://apps.apple.com/app/id6831671997">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.5 1.3 0 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5 1-1.4 1.4-2.8 1.4-2.8 0 0-2.4-1-2.4-4.1ZM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.3-.6 3.1-1.5Z"/></svg>
           <span data-i18n="btn_appstore">Download on the App Store</span>
         </a>
-        <a class="btn" href="https://saith96.github.io/bounce-bastion/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/bounce-bastion/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
@@ -412,6 +434,7 @@
           <p data-i18n="lf_tag">A roguelike deck-builder against the AI you built. Every memory you play, it absorbs.</p>
         </div>
       </div>
+            <a class="preview" href="https://saith96.github.io/loss-function/" aria-label="Loss Function website"><img src="https://saith96.github.io/loss-function/assets/og.jpg" alt="" loading="lazy" width="1200" height="630"><span class="pv-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span> &rarr;</span></a>
       <div class="cols">
         <div>
           <h3 data-i18n="why">Why we built it</h3>
@@ -430,9 +453,9 @@
         </div>
       </div>
       <div class="links">
+        <a class="btn site" href="https://saith96.github.io/loss-function/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg><span data-i18n="website">Visit website</span><span aria-hidden="true">&rarr;</span></a>
         <span class="btn disabled" data-i18n="as_soon">App Store: coming soon</span>
         <span class="btn disabled" data-i18n="gp_soon">Google Play: coming soon</span>
-        <a class="btn" href="https://saith96.github.io/loss-function/" data-i18n="website">Website</a>
         <a class="btn" href="https://saith96.github.io/loss-function/privacy.html" data-i18n="privacy">Privacy</a>
       </div>
     </article>
